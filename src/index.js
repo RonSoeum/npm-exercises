@@ -1,11 +1,18 @@
 "use Strict";
 
 const $ = require('jquery');
+const niceMessage = require('./say-hello.js');
 
-const sayHello = hello => console.log('Hello');
-sayHello();
+$(document).ready(function() {
 
-$('#button').click(e => {
-    $('#message').text("Hello World!");
-    $('body').css('color', 'red');
-});
+    const sayHello = () => console.log('Hello');
+    sayHello();
+
+    $('#button').click(() => {
+        $('#message').text("Hello World!");
+        $('body').css('color', 'red');
+    });
+
+    $('#nice-message').text(niceMessage());
+
+});// Ready
